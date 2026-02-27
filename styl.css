@@ -1,0 +1,64 @@
+* {
+    font-family: Tahoma;
+}
+
+header,
+footer {
+    background-color: maroon;
+    color: white;
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+}
+
+.lewy,
+.prawy {
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+
+.lewy {
+    background-color: lightsalmon;
+}
+
+.prawy {
+    background-color: darksalmon;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+table,
+td {
+    border: 1px, maroon;
+}
+
+table {
+    width: 85%;
+    border-collapse: collapse;
+}
+
+ol {
+    list-style: none;
+}
+
+button {
+    background-color: maroon;
+    color: white;
+    margin-left: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover {
+    color: maroon;
+    background-color: white;
+}
