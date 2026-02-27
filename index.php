@@ -16,10 +16,6 @@
     $database = 'zgloszenia';
 
     $connection = mysqli_connect($server, $user, $password, $database);
-
-    if(!$connection){
-        echo('db')
-    }
     ?>
     <header>
         <h1>Zgłoszenia wydarzeń</h1>
@@ -44,7 +40,18 @@
         </section>
         <section class="prawy">
             <h2>Nowe zgłoszenie</h2>
-            <ol></ol>
+            <ol>
+                <?php
+                $query = 'SELECT personel.id, personel.nazwisko FROM personel WHERE personel.id NOT IN (SELECT rejestr.id_personel FROM rejestr);';
+                $wynik = mysqli_query($connection, $query);
+
+                for ($i = 0; $i < mysqli_num_rows($wynik); $i++) {
+                    $dane = mysqli_fetch_array($wynik);
+                    echo "<li>$dane[id] $dane[nazwisko]</li>";
+                }
+                $query = mysqli_close($connection)
+                    ?>
+            </ol>
             <form action="" method="post">
                 <label for="inp">Wybierz id osoby z listy: </label>
                 <input type="number" id="inp">
