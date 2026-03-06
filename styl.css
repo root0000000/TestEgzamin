@@ -36,8 +36,10 @@ h3 {
 }
 
 table,
-td {
-    border: 1px, maroon;
+td,
+tr,
+th {
+    border: 1px solid maroon;
 }
 
 table {
@@ -61,4 +63,10 @@ button {
 button:hover {
     color: maroon;
     background-color: white;
+}
+
+#table1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
